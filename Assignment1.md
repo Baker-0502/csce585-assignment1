@@ -7,7 +7,7 @@ They have 10 ML models for multiple purposes, each is listed below, along with i
 * Natural Language AI
 	* NLP, model type N/A
 * Recommendations AI
-	* Used for advertisement reccomendation, Deep Neural Network
+	* Used for advertisement recommendation, Deep Neural Network
 * Speech-to-Text
 	* Used to convert speech to text, Deep Neural Network
 * Text-to-Speech
@@ -15,7 +15,7 @@ They have 10 ML models for multiple purposes, each is listed below, along with i
 * Translation AI
 	* Used to translate text (i.e. Google Translate), Deep Neural Network
 * Video AI
-	* Video Analysis Tool, Model Type N/A (Based off AutoML)
+	* Video Analysis Tool, Model Type N/A (Based on AutoML)
 * Vision AI
 	* General purpose visual detection AI (picks up objects, facial expression to emotions, etc.), Deep Neural Network
 * AutoML
@@ -24,16 +24,16 @@ They have 10 ML models for multiple purposes, each is listed below, along with i
 	* A conversational AI, Model Type BERT (Bidirectional Encoder Representations from Transformers)
 
 ## 2. What **ecosystem/framework/tools** do they use for model deployment?
-They use google cloud to deploy all of their ML models. It looks like they use git to track API code but their actual ML models/code seems to be proprietary.
+They use Google cloud to deploy all of their ML models. It looks like they use git to track API code but their actual ML models/code seems to be proprietary.
 
 ## 3. How do they **load balance** between the models?
-A modified form of consistent hashing, from my interpretation, they try to split the load evenly accross their servers, while also allowing for some wiggle room above the average to allow for both consistency and uniformity. Then, the jobs are hashed along with the servers, and the job moves through a "circle" of servers until it finds a server with available space, and occupies it.
+A modified form of consistent hashing, from my interpretation, they try to split the load evenly across their servers, while also allowing for some wiggle room above the average to allow for both consistency and uniformity. Then, the jobs are hashed along with the servers, and the job moves through a "circle" of servers until it finds a server with available space, and occupies it.
 
 ## 4. How do they **retire** a model?
-Google uses continous learning to improve and deploy their models to fit their continous integration/delivery standards, I wouldn't be surprised if any retirement of ML models is handled automatically via pipelines. Their process seems to focus more on making sure that quality data is introduced into the system for learning so as to reduce noise in the ML model. 
+Google uses continuous learning to improve and deploy their models to fit their continuous integration/delivery standards, I wouldn't be surprised if any retirement of ML models is handled automatically via pipelines. Their process seems to focus more on making sure that quality data is introduced into the system for learning so as to reduce noise in the ML model. 
 
 ## 5. How do they **update** a model? On what **regularity** do they update the models? Only what matters regarding model deployment, not about model training.
-Google uses continous learning to consistantly train and deploy models. While there is no information that I could find regarding the regularity of updates, I would assume they train a model based on data coming into the already deployed ML system, and once that new model is done, seamlessly push it into a production environment, thereby replacing the old model.
+Google uses continuous learning to consistently train and deploy models. While there is no information that I could find regarding the regularity of updates, I would assume they train a model based on data coming into the already deployed ML system, and once that new model is done, seamlessly push it into a production environment, thereby replacing the old model.
 
 ## 6. What **metrics** do they use to monitor a model's performance and health?
 According to a post made on Google's AI Blog, "we propose various statistical tools, including stratified bootstrap confidence intervals, performance profiles, and better metrics, such as interquartile mean and probability of improvement." (https://ai.googleblog.com/2021/11/rliable-towards-reliable-evaluation.html)
@@ -42,7 +42,7 @@ According to a post made on Google's AI Blog, "we propose various statistical to
 There isn't much info that I could find online, but I would imagine there are a few factors they take into consideration to deploy as quickly as possible, such as resources available on their cloud instance (assuming the use their own cloud platform and not an inhouse solution), how much data they are processing and what data they are processing. In addition to this, according to a survey conducted by Algorithmia, "50% of respondents said it took 8–90 days to deploy one model, with only 14% saying they could deploy in less than a week".
 
 ## 8. How do they **decrease the cost** of model deployment?
-From what it looks like, Google has multiple options for cloud environments that can reduce costs, such as the subsititution of Nvidia Tesla P/V100's with K80's, in addition there are other ways to reduce cost such as avoiding unutilized resources, preemptible vms and other methods listed on their Google Cloud Architecture center (https://cloud.google.com/architecture/best-practices-for-ml-performance-cost). While this is information that is given to cloud users looking to use Google's cloud resources, it also shows how developers have reduced costs at Google. In addition, lending computational power at a rate allows for google to soften their own deployment costs.
+From what it looks like, Google has multiple options for cloud environments that can reduce costs, such as the substitution of Nvidia Tesla P/V100's with K80's, in addition there are other ways to reduce costs such as avoiding unutilized resources, preemptible vms and other methods listed on their Google Cloud Architecture center (https://cloud.google.com/architecture/best-practices-for-ml-performance-cost). While this is information that is given to cloud users looking to use Google's cloud resources, it also shows how developers have reduced costs at Google. In addition, lending computational power at a rate allows for Google to soften their own deployment costs.
 
 
 ### Sources
